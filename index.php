@@ -11,3 +11,11 @@ require __DIR__.'/App/autoload.php';
 use DB\Conexao as DB;
 
 $banco = DB::getInstance();
+
+$consulta = $banco->query("SELECT * FROM cliente");
+
+foreach($consulta as $linha) {
+    echo "<pre>";
+    print_r($linha);
+    echo "</pre>";
+}
